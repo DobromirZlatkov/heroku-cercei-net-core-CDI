@@ -7,3 +7,10 @@ services:
       context: .
       dockerfile: Api/Dockerfile
 
+
+  webmvc:
+    image: webmvc
+    build:
+      context: .
+      dockerfile: ../WebMVC/Dockerfile
+
