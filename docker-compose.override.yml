@@ -7,10 +7,3 @@ services:
     ports:
       - "80"
 
-
-  webmvc:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
-
