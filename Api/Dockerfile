@@ -1,20 +1,39 @@
-FROM microsoft/aspnetcore:2.0 AS base
-WORKDIR /app
-EXPOSE 80
+#FROM microsoft/aspnetcore:2.0 AS base
+#WORKDIR /app
+#EXPOSE 80
+#
+#FROM microsoft/aspnetcore-build:2.0 AS build
+#WORKDIR /src
+#COPY *.sln ./
+#COPY Api/Api.csproj Api/
+#RUN dotnet restore
+#COPY . .
+#WORKDIR /src/Api
+#RUN dotnet build -c Release -o /app
+#
+#FROM build AS publish
+#RUN dotnet publish -c Release -o /app
+#
+#FROM base AS final
+#WORKDIR /app
+#COPY --from=publish /app .
+#ENTRYPOINT ["dotnet", "Api.dll"]
+#
 
-FROM microsoft/aspnetcore-build:2.0 AS build
-WORKDIR /src
-COPY *.sln ./
-COPY Api/Api.csproj Api/
+
+FROM microsoft/aspnetcore-build:2.0 AS build-env
+WORKDIR /app
+
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
 RUN dotnet restore
-COPY . .
-WORKDIR /src/Api
-RUN dotnet build -c Release -o /app
 
-FROM build AS publish
-RUN dotnet publish -c Release -o /app
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
+# Build runtime image
+FROM microsoft/aspnetcore:2.0
 WORKDIR /app
-COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "Api.dll"]
+COPY --from=build-env /app/out .
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet Api.dll
