@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".circleci", ".circleci", "{
 		.circleci\config.yml = .circleci\config.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Tests", "..\Api.Tests\Api.Tests.csproj", "{6967F2D9-30FA-48DE-8BCF-B51556E53B02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Tests", "Api.Tests\Api.Tests.csproj", "{5B9D785F-C4C4-42EB-B494-D9ACC5CF53AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,10 @@ Global
 		{8BD357D1-02D9-4E04-9E8C-51B02B329A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BD357D1-02D9-4E04-9E8C-51B02B329A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BD357D1-02D9-4E04-9E8C-51B02B329A17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6967F2D9-30FA-48DE-8BCF-B51556E53B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6967F2D9-30FA-48DE-8BCF-B51556E53B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6967F2D9-30FA-48DE-8BCF-B51556E53B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6967F2D9-30FA-48DE-8BCF-B51556E53B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9D785F-C4C4-42EB-B494-D9ACC5CF53AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9D785F-C4C4-42EB-B494-D9ACC5CF53AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9D785F-C4C4-42EB-B494-D9ACC5CF53AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9D785F-C4C4-42EB-B494-D9ACC5CF53AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

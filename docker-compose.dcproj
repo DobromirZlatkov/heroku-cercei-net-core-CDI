@@ -12,8 +12,10 @@
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
+    <None Include="docker-compose.unittests.yml" />
     <None Include="docker-compose.yml" />
     <None Include=".dockerignore" />
     <None Include="docker-compose.ci.build.yml" />
+    <None Include="docker-run-unittests.sh" />
   </ItemGroup>
 </Project>
